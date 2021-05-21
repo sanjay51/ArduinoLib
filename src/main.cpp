@@ -1,20 +1,17 @@
+#include <Arduino.h>
 #include <Pin.h>
-
-Pin pin(9);
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 }
 
-int i = 0;
+Pin pin(9);
 void loop() {
-  i++;
-  
-  Serial.println(i);
+  // put your main code here, to run repeatedly:
+  Serial.println("hello");
   pin.high();
   delay(1000);
-
   pin.low();
   delay(1000);
 }
