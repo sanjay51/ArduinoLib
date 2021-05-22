@@ -1,6 +1,6 @@
 #pragma once
 #include <Arduino.h>
-#include <Pin.h>
+#include <ServoMotor.h>
 
 enum JoystickDirection {
     LEFT, RIGHT, UP, DOWN, CENTRE
@@ -12,6 +12,8 @@ class Joystick {
     }
 
     JoystickDirection getDirection();
+    void test(ServoMotor& servo);
+
   private:
     int _analogPinX;
     int _analogPinY;
