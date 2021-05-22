@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <ServoMotor.h>
-#include <Servo.h>
+#include <Joystick.h>
 
 ServoMotor servo(9);
 void setup() {
@@ -9,31 +9,24 @@ void setup() {
   servo.init();
 }
 
-void controlMotor() {
-  servo.test();
-}
 
-int x, y;
+Joystick joystick(1, 2);
 void loop() {
-  controlMotor();
-}
+  switch (joystick.getDirection())
+  {
+  case LEFT:
+    servo.turnLeft();
+    break;
+  
+  case RIGHT:
+    servo.turnRight();
+    break;
 
+  case UP:
+    servo.turnMiddle();
+    break;
 
-void controlMotorWithJoystick() {
-  x = analogRead(1);
-  y = analogRead(2);
-
-  Serial.println("x: ");
-  Serial.print(x);
-  Serial.println("y: ");
-  Serial.print(y);
-  Serial.println("----");
-
-  if (x < 100) {
-    servo.turnLeftBy(10);
-    delay(100);
-  } else if (x > 1000) {
-    servo.turnRightBy(10);
-    delay(100);
-  } 
+  default:
+    break;
+  }
 }
