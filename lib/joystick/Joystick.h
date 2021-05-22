@@ -8,7 +8,7 @@ enum JoystickDirection {
 
 class Joystick {
   public:
-    Joystick::Joystick(int analogPinX, int analogPinY):_analogPinX(analogPinX), _analogPinY(analogPinY) {
+    Joystick(int analogPinX, int analogPinY):_analogPinX(analogPinX), _analogPinY(analogPinY) {
     }
 
     JoystickDirection getDirection();
