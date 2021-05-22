@@ -43,3 +43,17 @@ void ServoMotor::turnRightBy(int angle) {
 
   _servo.write(_currentAngle);
 }
+
+void ServoMotor::test() {
+  turnLeft();
+  delay(1000);
+
+  turnMiddle();
+  delay(1000);
+  
+  turnRight();
+  delay(1000);
+
+  turnMiddle();
+  delay(1000);
+}

@@ -12,6 +12,7 @@ class ServoMotor {
     void turnMiddle();
     void turnLeftBy(int angle);
     void turnRightBy(int angle);
+    void test();
   private:
     int _pin;
     Servo _servo;

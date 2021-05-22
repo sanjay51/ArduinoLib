@@ -9,9 +9,17 @@ void setup() {
   servo.init();
 }
 
-int i = 0;
+void controlMotor() {
+  servo.test();
+}
+
 int x, y;
 void loop() {
+  controlMotor();
+}
+
+
+void controlMotorWithJoystick() {
   x = analogRead(1);
   y = analogRead(2);
 
@@ -27,19 +35,5 @@ void loop() {
   } else if (x > 1000) {
     servo.turnRightBy(10);
     delay(100);
-  }
-
-  // put your main code here, to run repeatedly:
-
-  /*
-  if (i == 0) {
-    servo.turnLeft();
-  //servo.write(180);
-  delay(1000);
-  servo.turnRight();
-  //servo.write(0);
-  delay(1000);
-  }
-  i = 0;
-  */
+  } 
 }
