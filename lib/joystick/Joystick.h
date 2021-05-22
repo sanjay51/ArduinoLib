@@ -3,7 +3,7 @@
 #include <Pin.h>
 
 enum JoystickDirection {
-    LEFT, RIGHT, UP, DOWN
+    LEFT, RIGHT, UP, DOWN, CENTRE
 };
 
 class Joystick {

@@ -9,4 +9,6 @@ JoystickDirection Joystick::getDirection() {
   if (x > 600) return RIGHT;
   if (y < 400) return UP;
   if (y > 600) return DOWN;
+
+  return CENTRE;
 }
